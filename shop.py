@@ -5,7 +5,7 @@ cd = CallbackData('buy', 'id')
 keyboard = InlineKeyboardMarkup(
     inline_keyboard=[
     [InlineKeyboardButton(text = "Крісло АКЛАС Гілмор", callback_data="buy:1")],
-    [InlineKeyboardButton(text = "НКрісло АКЛАС Сіті", callback_data="buy:2")],
+    [InlineKeyboardButton(text = "Крісло АКЛАС Сіті", callback_data="buy:2")],
     [InlineKeyboardButton(text = "Крісло АКЛАС Арсі", callback_data="buy:3")],
     [InlineKeyboardButton(text = "Крісло конференційне АКЛАС Ларк", callback_data="buy:4")],
     [InlineKeyboardButton(text = "Крісло АКЛАС Тета", callback_data="buy:5")],

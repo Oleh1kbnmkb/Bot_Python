@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher, executor, types
 from site_url import computer
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
-
+from hendlers import dp
 
 # from aiogram.types import Message, CallbackQuery
 # from aiogram.dispatcher.filters import Command
@@ -172,6 +172,8 @@ async def computer_info_handler(callback_query: types.CallbackQuery):
           await bot.send_photo(callback_query.message.chat.id, computer[callback_query.data]["photo"])
           computer_price = computer[callback_query.data]["price"]
           message = f"<b>Price: </b> {computer_price}"
+          keyboard3 = types.InlineKeyboardMarkup()
+          button = types.InlineKeyboardButton(text = 'Добавити товар у корзину', callback_data='Добавити товар у корзину')
           await bot.send_message(callback_query.message.chat.id, message, parse_mode='html')
      else:
           await bot.send_message(callback_query.message.chat.id, "Такого товару нажаль немає в наявності😟")
