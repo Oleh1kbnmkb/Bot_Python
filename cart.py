@@ -1,5 +1,5 @@
 from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from aiogram.dispatcher.filters import Command
+# from aiogram.dispatcher.filters import Command
 from main import dp, bot
 from aiogram.utils.callback_data import CallbackData
 from hendlers import DataBase
@@ -11,7 +11,7 @@ db = DataBase('tgbot_database.db')
 
 
 
-@dp.message_handler(Command('shop'))
+@dp.message_handler(commands=('shop'))
 async def shop(message: Message):
     data = await db.get_products()
     keyboard = InlineKeyboardMarkup()

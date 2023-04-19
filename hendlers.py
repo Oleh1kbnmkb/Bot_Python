@@ -29,26 +29,26 @@ class DataBase:
 
 
 
-async def get_products(self):
-    with self.connect:
-        return self.cursor.execute("""SELECT * FROM products""").fetchall()
+    async def get_products(self):
+        with self.connect:
+            return self.cursor.execute("""SELECT * FROM products""").fetchall()
     
-async def get_user_product(self, product_id):
-    with self.connect:
-        return self.cursor.execute("""SELECT * FROM products WHERE product_id=(?)""", [product_id]).fetchall()
+    async def get_user_product(self, product_id):
+        with self.connect:
+            return self.cursor.execute("""SELECT * FROM products WHERE product_id=(?)""", [product_id]).fetchall()
     
-async def get_cart(self, user_id):
-    with self.connect:
-        return self.cursor.execute("""SELECT * FROM cart WHERE user_id=(?)""", [user_id]).fetchall()
+    async def get_cart(self, user_id):
+        with self.connect:
+            return self.cursor.execute("""SELECT * FROM cart WHERE user_id=(?)""", [user_id]).fetchall()
     
-async def add_to_cart(self, user_id, product_id):
-    with self.connect:
-        return self.cursor.execute("""INSERT INTO cart (user_id, product_id) VALUES (?, ?)""",
+    async def add_to_cart(self, user_id, product_id):
+        with self.connect:
+            return self.cursor.execute("""INSERT INTO cart (user_id, product_id) VALUES (?, ?)""",
                                    [user_id, product_id])
 
-async def empty_cart(self, user_id):
-    with self.connect:
-        return self.cursor.execute("""DELETE FROM cart WHERE user_id=(?)""", [user_id]).fetchall()
+    async def empty_cart(self, user_id):
+        with self.connect:
+            return self.cursor.execute("""DELETE FROM cart WHERE user_id=(?)""", [user_id]).fetchall()
     
 
 
