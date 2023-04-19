@@ -4,7 +4,8 @@ from aiogram import Bot, Dispatcher, executor, types
 from site_url import computer
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
-from hendlers import dp
+# from hendlers import dp
+from config import Config
 
 # from aiogram.types import Message, CallbackQuery
 # from aiogram.dispatcher.filters import Command
@@ -17,15 +18,20 @@ from hendlers import dp
 
 
 
-TOKEN = "6255018670:AAHDRCHL72HP0STq6oHn2WmWv6YcNtQtwoc"
-logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token=TOKEN)
-dp = Dispatcher(bot)
+# logging.basicConfig(level=logging.INFO)
+
+bot = Bot(token=Config.token)
+dp = Dispatcher(bot=bot)
 
 @dp.message_handler(commands=['start'])
 async def command_start(message: types.Message):
     await bot.send_message(message.from_user.id, text ='Раді вітати вас у інтернет магазині Rozetka!\nЦей бот допоможе вам придбати товар швидко і безпечно.', reply_markup=BotMenu)
+
+
+
+
+
 
 
 
@@ -147,22 +153,24 @@ async def bot_message(message: types.Message):
     if message.text == "Магазин":
         await bot.send_message(message.from_user.id, text = "Оберіть категорію товару, який хочете придбати", reply_markup=OtherMenu)
     elif message.text == "Офісні крісла":
-          await bot.send_message(message.from_user.id, text = "Офісні крісла", reply_markup=goods)
+        await bot.send_message(message.from_user.id, text = "Офісні крісла", reply_markup=goods)
     elif message.text == "Головне меню":
-          await bot.send_message(message.from_user.id, text = "Головне меню", reply_markup=BotMenu)
+        await bot.send_message(message.from_user.id, text = "Головне меню", reply_markup=BotMenu)
     elif message.text == "Дивани":
-          await bot.send_message(message.from_user.id, text = "Дивани", reply_markup=sofas)
+        await bot.send_message(message.from_user.id, text = "Дивани", reply_markup=sofas)
     elif message.text == "Робочі столи":
-          await bot.send_message(message.from_user.id, text = "Робочі столи", reply_markup=table_school)
+        await bot.send_message(message.from_user.id, text = "Робочі столи", reply_markup=table_school)
     elif message.text == "Журнальні столи":
-          await bot.send_message(message.from_user.id, text = "Журнальні столи", reply_markup=magazine_tables)
+        await bot.send_message(message.from_user.id, text = "Журнальні столи", reply_markup=magazine_tables)
     elif message.text == "Полиці для книг":
           await bot.send_message(message.from_user.id, text = "Полиці для книг", reply_markup=book_shelves)
-    
+
           computer_shop = InlineKeyboardMarkup()
           for teh in computer_shop:
-            button = InlineKeyboardButton(text = computer, callback_data=computer)
-            computer_shop.add(button)
+                button = InlineKeyboardButton(text = computer, callback_data=computer)
+                computer_shop.add(button)
+
+
           
 
          
@@ -226,4 +234,5 @@ async def on_startup(dp):
   
   
 if __name__ == '__main__':
-     executor.start_polling(dp, skip_updates=True)
+     executor.start_polling(dp)
+    
