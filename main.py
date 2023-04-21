@@ -39,7 +39,6 @@ async def set_default_commands(dp):
      await bot.set_my_commands(
           [
           types.BotCommand('start', 'Запустити бота'),
-          types.BotCommand('add_goods', 'Добавити товар у категорію Офісні крісла')
           ]
      )
 
