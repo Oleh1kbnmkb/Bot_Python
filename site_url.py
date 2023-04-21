@@ -579,12 +579,5 @@ furniture = {
     "description": "Цей папір знадобиться для архітекторів, щоб розмітити або зазначити щось.",
     "photo": "https://content2.rozetka.com.ua/goods/images/big_tile/300287182.jpg",
     "price":"50 - 500грн"
-    },
-    # "Рюкзаки": {
-    # "name":"",
-    # "site_url": "",
-    # "description": "",
-    # "photo": "",
-    # "price":""
-    # }
+    }
 }
