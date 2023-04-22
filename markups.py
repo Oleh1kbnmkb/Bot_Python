@@ -139,7 +139,7 @@ magazine_tables = InlineKeyboardMarkup(
     [InlineKeyboardButton(text = "Столик журнальний Wudus Plump", callback_data="Столик журнальний Wudus Plump")],
     [InlineKeyboardButton(text = "Столик журнальний ЧФЛИ Марс", callback_data="Столик журнальний ЧФЛИ Марс")],
     [InlineKeyboardButton(text = "Стіл журнальний M-Concept", callback_data="Стіл журнальний M-Concept")],
-    [InlineKeyboardButton(text = "Стіл журнальний Антонік Шарм", callback_data="Стіл журнальний Антонік Шарм")],
+    [InlineKeyboardButton(text = "Стіл журнальний Антонік", callback_data="Стіл журнальний Антонік")],
     [InlineKeyboardButton(text = "Стіл журнальний Антонік ДС-21", callback_data="Стіл журнальний Антонік ДС-21")]
     ]
 )
